@@ -32,5 +32,8 @@ public class RequestParamServlet extends HttpServlet {
         }
 
         response.getWriter().write("OK");
+
+
+        // application/www-form-urlencoded 컨텐츠 타입이 반드시 들어있어야 함.
     }
 }
