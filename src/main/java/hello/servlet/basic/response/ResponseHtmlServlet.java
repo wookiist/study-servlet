@@ -18,6 +18,8 @@ public class ResponseHtmlServlet extends HttpServlet
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
 
+
+        // 나름의 동적 html 만들기
         PrintWriter writer = response.getWriter();
         writer.println("<html>");
         writer.println("<body>");
