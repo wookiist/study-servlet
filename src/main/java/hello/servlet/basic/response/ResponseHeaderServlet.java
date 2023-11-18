@@ -32,6 +32,7 @@ public class ResponseHeaderServlet extends HttpServlet {
         // [redirect]
         redirect(response);
 
+        // [message body]
         PrintWriter writer = response.getWriter();
         writer.println("ok");
     }
@@ -48,8 +49,13 @@ public class ResponseHeaderServlet extends HttpServlet {
     }
 
     private void redirect(HttpServletResponse response) {
-        response.setStatus(HttpServletResponse.SC_FOUND);
-        response.setHeader("Location", "/basic/hello-form.html");
+//        response.setStatus(HttpServletResponse.SC_FOUND);
+//        response.setHeader("Location", "/basic/hello-form.html");
 
+        try {
+            response.sendRedirect("/basic/hello-form.html");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
